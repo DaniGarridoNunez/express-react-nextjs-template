@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
 
 export const exampleFunction = async (req: Request, res: Response) => {
-    res.send('Example Route');
-}
+  res.status(200).json({ message: "it works!" });
+};
