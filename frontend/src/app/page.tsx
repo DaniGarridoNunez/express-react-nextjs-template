@@ -1,5 +1,6 @@
 "use client";
 
+import { BACKEND_URI } from "@/config/constants";
 import { useExampleStore } from "@/stores/exampleStore";
 import { useEffect } from "react";
 
@@ -9,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     async function testApi() {
       try {
-        const response = await fetch("http://localhost:5000/api/example");
+        const response = await fetch(`${BACKEND_URI}/example`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
